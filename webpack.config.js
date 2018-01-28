@@ -6,7 +6,9 @@ var WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 module.exports = {
 devtool: 'source-map',
 entry: {
-    style: './src/sass/main.scss'
+    common: './src/sass/common.scss',
+    login: './src/sass/login.scss',
+    home: './src/sass/home.scss'
 },
 output: {
     path: path.join(__dirname, 'dist/css'),
