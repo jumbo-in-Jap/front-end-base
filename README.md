@@ -1,5 +1,8 @@
 # setup
 
+> npm install
+
+# build and run
 *on gulp branch*
 
 > gulp
