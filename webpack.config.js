@@ -13,18 +13,33 @@ output: {
     filename: '[name].css'
 },
 module: {
-    rules: [{
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-            use: [{
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader"
-            }],
-            // use style-loader in development 
-            fallback: "style-loader"
-        })
-    }]
+    rules: [
+        {
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                use: [{
+                    loader: "css-loader"
+                }, {
+                    loader: "sass-loader"
+                }],
+                // use style-loader in development 
+                fallback: "style-loader"
+            })
+        },
+        {
+            test: require.resolve('jquery'),
+            use: [
+              { loader: 'expose-loader', options: 'jQuery' },
+              { loader: 'expose-loader', options: '$' }
+            ]
+          },          
+          {
+            test: require.resolve('tether'),
+            use: [
+              { loader: 'expose-loader', options: 'Tether' }
+            ]
+          }
+    ]
 },
 plugins: [
     new WebpackBuildNotifierPlugin(),
@@ -35,8 +50,16 @@ plugins: [
         server: { baseDir: ['dist'] },
         files: [
             'dist/*.css',
-            'dist/*.html'
+            'dist/html/*.html'
         ]
     })
+],
+externals: [
+    {
+        $: "jquery",
+        jQuery: "jquery",
+        'window.jQuery': 'jquery',
+        Tether: 'tether'
+    }
 ]
 };
