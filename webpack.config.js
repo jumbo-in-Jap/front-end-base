@@ -4,7 +4,6 @@ var BrowserSyncPlugin          = require('browser-sync-webpack-plugin');
 var WebpackBuildNotifierPlugin = require('webpack-build-notifier'); 
 
 module.exports = {
-devtool: 'source-map',
 entry: {
     common: './src/sass/common.scss',
     login: './src/sass/login.scss',
