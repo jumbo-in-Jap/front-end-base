@@ -19,18 +19,12 @@ stats: {
     chunkModules: false
 },
 entry: {
-    index: [
-      path.resolve(__dirname, './src/pug/index.pug')
-    ],
-    // index: [
-    //   path.resolve(__dirname, 'templates/index.pug')
-    // ],
-    // post: [
-    //   path.resolve(__dirname, 'templates/post.pug')
-    // ],    
-    'css/application': [
-      path.resolve(__dirname, './src/sass/common.scss')
-    ]
+    'login': './src/pug/login.pug',
+    'home': './src/pug/home.pug',
+    'css/common': './src/sass/common.scss',
+    'css/login': './src/sass/login.scss',
+    'css/home': './src/sass/home.scss'
+
 },
 output: {
     path: path.resolve(__dirname, 'build'),
@@ -40,7 +34,7 @@ module: {
     rules: [
         {
             test: /\.pug$/,
-            use: ExtractTextPlugin.extract({
+            use: extractHtml.extract({
                 use: [
                     { loader: 'html-loader'},
                     { loader: 'pug-html-loader?pretty&exports=false'}
