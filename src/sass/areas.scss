@@ -1,0 +1,16 @@
+@import "module/sidebar";
+@import "config/colors";
+
+.navbar-header{
+    .input-group{
+        margin-top: 5px;
+    }
+    .search_title{
+        font-weight: bold;
+        padding: 10px 10px 0px 0;
+    }    
+}
+
+.table-striped{
+    background-color: white;
+}

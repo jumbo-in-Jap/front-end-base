@@ -1,0 +1,60 @@
+block vars
+  include ../../config/config.pug
+  - var key = "areas"
+  - var page = pages[key]
+
+html
+  head
+    include ../..//module/head
+    link(rel="stylesheet", href="/css/areas.css")
+  body
+    div.wrapper
+      include ../../module/sidebar
+      div#content
+        h2(style="margin:20px") 地域追加
+        nav.navbar.navbar-default
+          div.container-fluid
+            div.navbar-header
+              p 検索条件
+              //- form#area_search.area_search(action="/kanri/areas" accept-charset="UTF-8" method="post")
+              form#area_search.area_search
+                div.input-group
+                  input(name="utf8", type="hidden", value="&#x2713;")
+                  input(name="authenticity_token", type="hidden", value="xxxxxx")
+                div.input-group
+                  label.search_title 県名
+                  div.btn-group.bootstrap-select
+                    select.btn.dropdown-toggle(name="area[prefecture_id]")
+                        option(value="1") 北海道
+                        option(value="2") 青森県
+                        option(value="3") 岩手県
+                div.input-group
+                  label.search_title 名前 
+                  input.form-control(type="text" name="area[name]" placeholder="Name" style={width:"500px"})
+                div.input-group
+                  label.search_title 住所 
+                  input.form-control(type="text" name="area[address]" placeholder="Address" style={width:"500px"})
+                div.input-group
+                  label.search_title 緯度 
+                  input.form-control(type="text" name="area[latitude]" placeholder="Latitude" style={width:"500px"})
+                div.input-group
+                  label.search_title 経度                    
+                  input.form-control(type="text" name="area[longitude]" placeholder="Longitude" style={width:"500px"})
+                div.form-check(style={margin:"10px"})
+                  input.form-check-input(type="checkbox" name="area[longitude]")
+                  label.form-check-label 有効  
+                button.btn(type="button" data-toggle="modal" data-target="#confirmModal")   button                    
+                div.actions
+                  input.btn.btn-success(type="submit" name="commit" data-disable-with="確認" value="確認" data-target="confirmModal") 
+
+        // modal
+        div#confirmModal.modal.fade(role="dialog")
+          div.modal-dialog(role="document")
+            div.modal-content
+              div.modal-header
+                h5 確認
+              div.modal-body
+                p this is modal
+              div.modal-footer
+                button.btn.btn-secondary(type="button" data-dismiss="modal")
+                button.btn.btn-success(type="button")

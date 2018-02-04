@@ -1,0 +1,25 @@
+block vars
+  include ../config/config.pug
+  - var key = "home"
+  - var page = pages[key]
+
+html
+  head
+    include ../module/head
+    link(rel="stylesheet", href="../css/home.css")
+  body
+    div.wrapper
+      include ../module/sidebar
+      div#content
+        h3 Planme!管理画面
+        p 説明など
+        h3 お知らせ
+        p 周知事項など
+        nav.navbar.navbar-default
+          div.container-fluid
+            div.navbar-header
+              p This is home page.
+            div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li: a(href="#" target="_blank") Page
+  

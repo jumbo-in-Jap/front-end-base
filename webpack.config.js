@@ -19,16 +19,19 @@ stats: {
     chunkModules: false
 },
 entry: {
-    'login': './src/pug/login.pug',
-    'home': './src/pug/home.pug',
+    'pages/login': './src/pug/pages/login.pug',
+    'pages/home': './src/pug/pages/home.pug',
+    'pages/areas/index': './src/pug/pages/areas/index.pug',
+    'pages/areas/new': './src/pug/pages/areas/new.pug',
     'css/common': './src/sass/common.scss',
     'css/login': './src/sass/login.scss',
-    'css/home': './src/sass/home.scss'
-
+    'css/home': './src/sass/home.scss',
+    'css/areas': './src/sass/areas.scss',
+    'common': './src/js/app'
 },
 output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].js'
+    filename: 'bundle.js'
 },
 module: {
     rules: [
@@ -52,19 +55,19 @@ module: {
                 fallback: "style-loader"
             })
         },
-        {
-            test: require.resolve('jquery'),
-            use: [
-            { loader: 'expose-loader', options: 'jQuery' },
-            { loader: 'expose-loader', options: '$' }
-            ]
-        },          
-        {
-            test: require.resolve('tether'),
-            use: [
-            { loader: 'expose-loader', options: 'Tether' }
-            ]
-        }
+        // {
+        //     test: require.resolve('jquery'),
+        //     use: [
+        //     { loader: 'expose-loader', options: 'jQuery' },
+        //     { loader: 'expose-loader', options: '$' }
+        //     ]
+        // },          
+        // {
+        //     test: require.resolve('tether'),
+        //     use: [
+        //     { loader: 'expose-loader', options: 'Tether' }
+        //     ]
+        // }
     ]
 },
 plugins: [
@@ -74,7 +77,7 @@ plugins: [
         server: { baseDir: ['build'] },
         files: [
             'build/css/*.css',
-            'build/*.html'
+            'build/pages/*.html'
         ]
     }),
     new Webpack.LoaderOptionsPlugin({
@@ -96,12 +99,12 @@ plugins: [
     extractStyles,
     extractHtml
 ],
-externals: [
-    {
-        $: "jquery",
-        jQuery: "jquery",
-        'window.jQuery': 'jquery',
-        Tether: 'tether'
-    }
-]
+// externals: [
+//     {
+//         $: "jquery",
+//         jQuery: "jquery",
+//         'window.jQuery': 'jquery',
+//         Tether: 'tether'
+//     }
+// ]
 };

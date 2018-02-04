@@ -6025,3 +6025,15 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa; }
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s; }

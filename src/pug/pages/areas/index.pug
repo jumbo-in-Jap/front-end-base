@@ -1,0 +1,75 @@
+block vars
+  include ../../config/config.pug
+  - var key = "areas"
+  - var page = pages[key]
+
+html
+  head
+    include ../..//module/head
+    link(rel="stylesheet", href="/css/areas.css")
+  body
+    div.wrapper
+      include ../../module/sidebar
+      div#content
+        h2(style="margin:20px") 地域一覧
+        nav.navbar.navbar-default
+          div.container-fluid
+            div.navbar-header
+              p 検索条件
+              form#area_search.area_search(action="/kanri/areas" accept-charset="UTF-8" method="get")
+                div.input-group
+                  input(name="utf8", type="hidden", value="&#x2713;")
+                div.input-group
+                  label.search_title 県名 
+                  input#q_prefecture_name_cont.form-control(type="search" name="q_prefecture_name_cont" placeholder="Prefecture Name は以下を含む" style={width:"500px"})
+                div.input-group
+                  label.search_title 名前 
+                  input#q_prefecture_name_cont.form-control(type="search" name="q[name_cont]" placeholder="Name は以下を含む" style={width:"500px"})
+                div.input-group
+                  label.search_title 住所 
+                  input#q_prefecture_name_cont.form-control(type="search" name="q[address_cont]" placeholder="Address は以下を含む" style={width:"500px"})
+                div.checkbox
+                  div.search_title 有効or無効
+                  label 両方
+                    input#q_is_valid_true_true_false(type="radio" value="true false" checked="checked" name="q[is_valid_true]")
+                  label 有効だけ
+                    input#q_is_valid_true_true(type="radio" value="true false" checked="checked" name="q[is_valid_true]")
+                  label 無効だけ
+                    input#q_is_valid_true_false(type="radio" value="true false" checked="checked" name="q[is_valid_true]")
+                div.actions
+                  input.btn.btn-default(type="submit" name="commit" data-disable-with="検索" value="検索") 
+
+        table.table.table-striped
+          thead
+            tr
+              th No 
+              th ID 
+              th: a.sort_link(href="/kanri/areas?q%5Bs%5D=prefecture_id+asc") Prefecture
+              th: a.sort_link(href="/kanri/areas?q%5Bs%5D=name+asc") Name
+              th: a.sort_link(href="/kanri/areas?q%5Bs%5D=address+asc") Address
+              th 緯度 
+              th 経度 
+              th 位置情報 
+              th: a.sort_link(href="/kanri/areas?q%5Bs%5D=is_valid+asc") Is valid 
+          tbody
+              tr
+                th #
+                td test1
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+              tr
+                th #
+                td test1
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+                td test2
+  
