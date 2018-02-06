@@ -1,0 +1,108 @@
+<!DOCTYPE js>
+<html>
+  <head>
+    <title>Planme!管理画面| 地域</title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../../css/areas.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3><a href="/html/home" target="_blank">Planme!<br/>管理画面</a></h3>
+        </div>
+        <ul class="list-unstyled components">
+          <p class="username">ユーザー名</p>
+          <p class="title">エリア情報</p>
+          <li><a href="/html/areas" target="_blank">地域</a></li>
+          <li><a href="#" target="_blank">地域距離</a></li>
+          <p class="title">観光情報</p>
+          <li><a href="#" target="_blank">観光カテゴリ</a></li>
+          <li><a href="#" target="_blank">観光ジャンル</a></li>
+          <li><a href="#" target="_blank">観光スポット</a></li>
+          <li><a href="#" target="_blank">観光スポット画像</a></li>
+          <li><a href="#" target="_blank">観光営業日</a></li>
+          <li><a href="#" target="_blank">観光月別訪問数</a></li>
+          <p class="title">運用</p>
+          <li><a href="#" target="_blank">オペレータ</a></li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+          <li><a class="logout" href="#" target="_blank">ログアウト</a></li>
+        </ul>
+      </nav>
+      <div id="content">
+        <h2 style="margin:20px;">地域追加</h2>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <form class="area_search" id="area_search" action="/kanri/areas" accept-charset="UTF-8" method="post">
+                <div class="input-group">
+                  <input name="utf8" type="hidden" value="&amp;#x2713;"/>
+                  <input name="authenticity_token" type="hidden" value="xxxxxx"/>
+                </div>
+                <div class="input-group">
+                  <label class="search_title">県名</label>
+                  <div class="btn-group bootstrap-select">
+                    <select class="btn dropdown-toggle" name="area[prefecture_id]">
+                      <option value="1">北海道</option>
+                      <option value="2">青森県</option>
+                      <option value="3">岩手県</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label class="search_title">名前 </label>
+                  <input class="form-control" type="text" name="area[name]" placeholder="Name" style="width:500px;"/>
+                </div>
+                <div class="input-group">
+                  <label class="search_title">住所 </label>
+                  <input class="form-control" type="text" name="area[address]" placeholder="Address"/>
+                </div>
+                <div class="form-inline" style="padding:10px 10px 10px 0px;">
+                  <div class="input-group">
+                    <label class="search_title">緯度 </label>
+                    <input class="form-control" type="text" name="area[latitude]" placeholder="Latitude"/>
+                  </div>
+                  <div class="input-group" style="margin:0px 0px 0px 10px;">
+                    <label class="search_title">経度                    </label>
+                    <input class="form-control" type="text" name="area[longitude]" placeholder="Longitude"/>
+                  </div>
+                  <div id="confirm" onclick="onClickMap()" style="margin:0px 0px 0px 10px;">確認</div>
+                </div>
+                <div class="form-check" style="margin:10px;">
+                  <input class="form-check-input" type="checkbox" name="area[longitude]"/>
+                  <label class="form-check-label">有効 </label>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-success" type="button" name="commit" data-toggle="modal" data-target="#confirmModal">確認</button>
+                </div>
+                <!-- modal-->
+                <div class="modal fade" id="confirmModal" role="dialog">
+                  <div class="modal-dialog modal-dialog-center" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5>確認</h5>
+                      </div>
+                      <div class="modal-body">
+                        <p>この内容で更新しますか？</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">閉じる</button>
+                        <div class="actions">
+                          <input class="btn btn-success" type="submit" name="commit" data-disable-with="確定" value="確定"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

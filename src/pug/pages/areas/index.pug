@@ -6,7 +6,7 @@ block vars
 html
   head
     include ../..//module/head
-    link(rel="stylesheet", href="/css/areas.css")
+    link(rel="stylesheet", href="../../css/areas.css")
   body
     div.wrapper
       include ../../module/sidebar
@@ -37,7 +37,7 @@ html
                   label 無効だけ
                     input#q_is_valid_true_false(type="radio" value="true false" checked="checked" name="q[is_valid_true]")
                 div.actions
-                  input.btn.btn-default(type="submit" name="commit" data-disable-with="検索" value="検索") 
+                  input.btn.btn-secondary(type="submit" name="commit" data-disable-with="検索" value="検索")
 
         table.table.table-striped
           thead
@@ -51,6 +51,7 @@ html
               th 経度 
               th 位置情報 
               th: a.sort_link(href="/kanri/areas?q%5Bs%5D=is_valid+asc") Is valid 
+              th  
           tbody
               tr
                 th #
@@ -62,6 +63,7 @@ html
                 td test2
                 td test2
                 td test2
+                td: a(href="./new.html") 編集
               tr
                 th #
                 td test1
@@ -72,4 +74,4 @@ html
                 td test2
                 td test2
                 td test2
-  
+                td: a(href="./new.html") 編集

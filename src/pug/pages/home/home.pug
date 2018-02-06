@@ -1,15 +1,15 @@
 block vars
-  include ../config/config.pug
+  include ../../config/config.pug
   - var key = "home"
   - var page = pages[key]
 
 html
   head
-    include ../module/head
-    link(rel="stylesheet", href="../css/home.css")
+    include ../../module/head
+    link(rel="stylesheet", href="../../css/home.css")
   body
     div.wrapper
-      include ../module/sidebar
+      include ../../module/sidebar
       div#content
         h3 Planme!管理画面
         p 説明など

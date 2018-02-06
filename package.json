@@ -42,7 +42,8 @@
     "tether": "^1.4.3",
     "webpack": "^3.10.0",
     "webpack-build-notifier": "^0.1.22",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^2.11.1",
+    "webpack-icons-installer": "^1.0.0"
   },
   "dependencies": {
     "resolve-url-loader": "^2.2.1",

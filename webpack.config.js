@@ -1,8 +1,6 @@
 var path                       = require('path');
 var ExtractTextPlugin          = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin          = require('browser-sync-webpack-plugin');  
-var WebpackBuildNotifierPlugin = require('webpack-build-notifier'); 
-var Autoprefixer               = require('autoprefixer'); 
 
 var Webpack               = require('webpack'); 
 let extractStyles = new ExtractTextPlugin('[name].css');
@@ -14,7 +12,9 @@ module.exports = [
         /* css modules */
         entry: {
             common: './src/sass/common.scss',
-            home:   './src/sass/home.scss'
+            home:   './src/sass/home.scss',
+            areas:  './src/sass/areas.scss',
+            login:  './src/sass/login.scss',
         },
         output: {
             path: path.resolve(__dirname, "build/css"),
@@ -43,10 +43,10 @@ module.exports = [
     {
         /* pug modules */
         entry: {
-            login: './src/pug/pages/login.pug',
-            home:  './src/pug/pages/home.pug',        
-            "areas/index": './src/pug/pages/areas/index.pug',        
-            "areas/new":   './src/pug/pages/areas/new.pug'
+            'login/index': './src/pug/pages/login/login.pug',
+            'home/index':  './src/pug/pages/home/home.pug',        
+            'areas/index': './src/pug/pages/areas/index.pug',
+            'areas/new': './src/pug/pages/areas/new.pug',
         },
         output: {
             path: path.resolve(__dirname, 'build/html'),

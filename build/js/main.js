@@ -72,6 +72,33 @@
 
 __webpack_require__(1);
 
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* areas */
+(function () {
+  console.log("init");
+
+  function onClickMap() {
+    var lat = (0, _jquery2.default)("#area_search [name='area[latitude]']")[0].value;
+    var lng = (0, _jquery2.default)("#area_search [name='area[longitude]']")[0].value;
+
+    if (lat == "" || lng == "") {
+      alert("緯度・経度を入力してください");
+      return;
+    }
+
+    var url = 'http://maps.google.com/maps?q=' + lat + ',' + lng;
+    window.open(url, '_blank');
+  }
+
+  window.$ = _jquery2.default;
+  window.onClickMap = onClickMap;
+})();
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
