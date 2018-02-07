@@ -11,7 +11,7 @@ html
     div.wrapper
       include ../../module/sidebar
       div#content
-        h2(style="margin:20px") 地域一覧
+        h2(style="margin:20px") 地域
         nav.navbar.navbar-default
           div.container-fluid
             div.navbar-header
@@ -38,7 +38,12 @@ html
                     input#q_is_valid_true_false(type="radio" value="true false" checked="checked" name="q[is_valid_true]")
                 div.actions
                   input.btn.btn-secondary(type="submit" name="commit" data-disable-with="検索" value="検索")
+        nav.navbar.navbar-default
+          div.container-fluid
+            div.navbar-header
+              a.btn.btn-success(href="./new.html") エリアを追加する
 
+        // 検索結果
         table.table.table-striped
           thead
             tr
