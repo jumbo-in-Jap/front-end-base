@@ -6,12 +6,15 @@ block vars
 html
   head
     include ../../module/head
-    link(rel="stylesheet", href="../../css/home.css")
-  body
-    div.wrapper
-      include ../../module/sidebar
-      div#content
-        h3 Planme!管理画面
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include ../../module/sidebar
+    .content-wrapper
+      .container-fluid
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Navbar
+        h2 Planme!管理画面
         p 説明など
         h3 お知らせ
         p 周知事項など
@@ -22,4 +25,5 @@ html
             div#bs-example-navbar-collapse-1.collapse.navbar-collapse
               ul.nav.navbar-nav.navbar-right
                 li: a(href="#" target="_blank") Page
+      include ../../module/footer
   

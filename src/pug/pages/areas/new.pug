@@ -7,12 +7,19 @@ html
   head
     include ../..//module/head
     link(rel="stylesheet", href="../../css/areas.css")
-  body
-    div.wrapper
-      include ../../module/sidebar
-      div#content
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include ../../module/sidebar
+    .content-wrapper
+      .container-fluid
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Dashboard
+          li.breadcrumb-item.active Navbar
         h2(style="margin:20px") 地域追加
-        nav.navbar.navbar-default
+        div.alert.alert-danger(role="role")
+          strong 更新エラー
+          p 更新に失敗しました ${error}
+        nav.navbar.navbar-default.card
           div.container-fluid
             div.navbar-header
               form#area_search.area_search(action="/kanri/areas" accept-charset="UTF-8" method="post")
@@ -54,7 +61,6 @@ html
                         h5 確認
                       div.modal-body
                         p この内容で更新しますか？
-
                       div.modal-footer
                         button.btn.btn-secondary(type="button" data-dismiss="modal") 閉じる
                         div.actions

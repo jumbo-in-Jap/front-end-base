@@ -3,6 +3,17 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
+@import "template/variables.scss";
+@import "template/mixins.scss";
+@import "template/global.scss";
+@import "template/utilities.scss";
+@import "navbar/navbar_global.scss";
+@import "navbar/navbar_fixed.scss";
+@import "navbar/navbar_static.scss";
+@import "navbar/navbar_toggle.scss";
+@import "navbar/navbar_colors.scss";
+@import "template/footer.scss";
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;

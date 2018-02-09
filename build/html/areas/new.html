@@ -8,34 +8,46 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../../css/areas.css"/>
   </head>
-  <body>
-    <div class="wrapper">
-      <nav id="sidebar">
-        <div class="sidebar-header">
-          <h3><a href="/html/home" target="_blank">Planme!<br/>管理画面</a></h3>
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav"><a class="navbar-brand" href="../home">Planme!管理画面</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard"><a class="nav-link" href="../areas/"><i class="fa fa-fw fa-dashboard"></i><span class="nav-link-text">地域</span></a></li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts"><a class="nav-link" href="../areas/distance"><i class="fa fa-fw fa-area-chart"></i><span class="nav-link-text">地域距離</span></a></li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables"><a class="nav-link" href="../sight/"><i class="fa fa-fw fa-table"></i><span class="nav-link-text">観光カテゴリ</span></a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out">Logout</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">ログアウトしますか?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+          <div class="modal-body">ログアウトを実施します</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
         </div>
-        <ul class="list-unstyled components">
-          <p class="username">ユーザー名</p>
-          <p class="title">エリア情報</p>
-          <li><a href="/html/areas" target="_blank">地域</a></li>
-          <li><a href="#" target="_blank">地域距離</a></li>
-          <p class="title">観光情報</p>
-          <li><a href="#" target="_blank">観光カテゴリ</a></li>
-          <li><a href="#" target="_blank">観光ジャンル</a></li>
-          <li><a href="#" target="_blank">観光スポット</a></li>
-          <li><a href="#" target="_blank">観光スポット画像</a></li>
-          <li><a href="#" target="_blank">観光営業日</a></li>
-          <li><a href="#" target="_blank">観光月別訪問数</a></li>
-          <p class="title">運用</p>
-          <li><a href="#" target="_blank">オペレータ</a></li>
-        </ul>
-        <ul class="list-unstyled CTAs">
-          <li><a class="logout" href="#" target="_blank">ログアウト</a></li>
-        </ul>
-      </nav>
-      <div id="content">
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+          <li class="breadcrumb-item active">Navbar</li>
+        </ol>
         <h2 style="margin:20px;">地域追加</h2>
-        <nav class="navbar navbar-default">
+        <div class="alert alert-danger" role="role"><strong>更新エラー</strong>
+          <p>更新に失敗しました ${error}</p>
+        </div>
+        <nav class="navbar navbar-default card">
           <div class="container-fluid">
             <div class="navbar-header">
               <form class="area_search" id="area_search" action="/kanri/areas" accept-charset="UTF-8" method="post">

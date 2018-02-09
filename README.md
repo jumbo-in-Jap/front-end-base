@@ -1,16 +1,17 @@
 # setup
 
+- module
+    - webpack3
+    - pug
+    - sass
+    - bootstrap4
+
 > npm install
 
-# build and run
-*on gulp branch*
+# build
 
-> gulp
+> webpack
 
-*on webpack branch*
+# dev
 
 > webpack --watch
-
-- browser-sync
-    - auto reload src
-- build sass -> css when save files
