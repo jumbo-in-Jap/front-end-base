@@ -6337,14 +6337,20 @@ footer.sticky-footer {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px); } }
 
+/* ---------------------------------------------------
+    Body 
+----------------------------------------------------- */
 body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa; }
 
 /* ---------------------------------------------------
-    CONTENT STYLE
+    Content 
 ----------------------------------------------------- */
 #content {
   padding: 20px;
   min-height: 100vh;
   transition: all 0.3s; }
+
+.top_title {
+  margin: 20px; }

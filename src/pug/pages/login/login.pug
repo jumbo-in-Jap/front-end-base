@@ -11,13 +11,17 @@ html
     link(rel="stylesheet", href="../../css/login.css")
   body.text-center
     form.form-signin
-      img.mb-4(src="/images/app_icon.png" alt="" style={width: "72px", height: "72px"})
+      img.mb-4.icon(src="/images/app_icon.png" alt="")
       lavel(for="inputEmail" class="sr-only") Email address
       input(name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus)
       label(for="inputPassword" class="sr-only") Password
       input(name="password" nput type="password" id="inputPassword" class="form-control" placeholder="Password" required)
+
+      // error 
       div.alert.alert-danger(role="role")
         strong ログイン失敗
         p アカウントを確認してください
+      // error
+      
       button.btn.btn-lg.btn-primary.btn-block(type="submit") ログイン
 

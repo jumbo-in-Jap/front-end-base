@@ -11,11 +11,8 @@ html
     include ../../module/sidebar
     .content-wrapper
       .container-fluid
-        ol.breadcrumb
-          li.breadcrumb-item
-            a(href='#') Dashboard
-          li.breadcrumb-item.active Navbar
-        h2(style="margin:20px") 地域
+        // エリア検索
+        h2.top_title 地域
         nav.navbar.navbar-default.card
           div.container-fluid
             div.navbar-header
@@ -25,13 +22,13 @@ html
                   input(name="utf8", type="hidden", value="&#x2713;")
                 div.input-group
                   label.search_title 県名 
-                  input#q_prefecture_name_cont.form-control(type="search" name="q_prefecture_name_cont" placeholder="Prefecture Name は以下を含む" style={width:"500px"})
+                  input#q_prefecture_name_cont.form-control.search_form(type="search" name="q_prefecture_name_cont" placeholder="Prefecture Name は以下を含む" )
                 div.input-group
                   label.search_title 名前 
-                  input#q_prefecture_name_cont.form-control(type="search" name="q[name_cont]" placeholder="Name は以下を含む" style={width:"500px"})
+                  input#q_prefecture_name_cont.form-control.search_form(type="search" name="q[name_cont]" placeholder="Name は以下を含む")
                 div.input-group
                   label.search_title 住所 
-                  input#q_prefecture_name_cont.form-control(type="search" name="q[address_cont]" placeholder="Address は以下を含む" style={width:"500px"})
+                  input#q_prefecture_name_cont.form-control.search_form(type="search" name="q[address_cont]" placeholder="Address は以下を含む")
                 div.checkbox
                   div.search_title 有効or無効
                   label 両方

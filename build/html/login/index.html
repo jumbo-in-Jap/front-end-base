@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Planme!ログイン画面</title>
+    <title>Planme! | ログイン画面</title>
     <link rel="stylesheet" href="../../css/common.css">
     <script type="text/javascript" src="../../js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="../../css/login.css">
   </head>
   <body class="text-center">
-    <form class="form-signin"><img class="mb-4" src="/images/app_icon.png" alt="" style="width:72px;height:72px;">
+    <form class="form-signin"><img class="mb-4 icon" src="/images/app_icon.png" alt="">
       <lavel class="sr-only" for="inputEmail">Email address</lavel>
       <input class="form-control" name="email" type="email" id="inputEmail" placeholder="Email address" required autofocus>
       <label class="sr-only" for="inputPassword">Password</label>
       <input class="form-control" name="password" nput type="password" id="inputPassword" placeholder="Password" required>
+      <!-- error -->
       <div class="alert alert-danger" role="role"><strong>ログイン失敗</strong>
         <p>アカウントを確認してください</p>
       </div>
+      <!-- error-->
       <button class="btn btn-lg btn-primary btn-block" type="submit">ログイン</button>
     </form>
   </body>

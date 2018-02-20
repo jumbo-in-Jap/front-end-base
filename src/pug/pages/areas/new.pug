@@ -13,12 +13,16 @@ html
       .container-fluid
         ol.breadcrumb
           li.breadcrumb-item
-            a(href='#') Dashboard
-          li.breadcrumb-item.active Navbar
-        h2(style="margin:20px") 地域追加
+            a(href='../areas') areas
+          li.breadcrumb-item.active new          
+        h2.top_title 地域追加
+
+        // error
         div.alert.alert-danger(role="role")
           strong 更新エラー
           p 更新に失敗しました ${error}
+        // error
+
         nav.navbar.navbar-default.card
           div.container-fluid
             div.navbar-header
@@ -39,14 +43,14 @@ html
                 div.input-group
                   label.search_title 住所 
                   input.form-control(type="text" name="area[address]" placeholder="Address")
-                div.form-inline(style={padding:"10px 10px 10px 0px"})
+                div.form-inline
                   div.input-group
                     label.search_title 緯度 
                     input.form-control(type="text" name="area[latitude]" placeholder="Latitude")
-                  div.input-group(style={margin:"0px 0px 0px 10px"})
+                  div.input-group.lat
                     label.search_title 経度                    
                     input.form-control(type="text" name="area[longitude]" placeholder="Longitude")
-                  div#confirm(onclick="onClickMap()" style={margin:"0px 0px 0px 10px"}) 確認
+                  div#confirm.lng(onclick="onClickMap()") 確認
                 div.form-check(style={margin:"10px"})
                   input.form-check-input(type="checkbox" name="area[longitude]")
                   label.form-check-label 有効 

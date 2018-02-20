@@ -1,4 +1,4 @@
-# setup
+# sbiv front end
 
 - module
     - webpack3
@@ -6,12 +6,18 @@
     - sass
     - bootstrap4
 
-> npm install
-
 # build
 
+> npm install
 > webpack
+
+## /src
+
+
+## /build
 
 # dev
 
 > webpack --watch
+
+run at http://localhost:3000/

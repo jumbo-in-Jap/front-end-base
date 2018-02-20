@@ -5,6 +5,15 @@
   font-weight: bold;
   padding: 10px 10px 0px 0; }
 
+.navbar-header .search_form {
+  width: 500px; }
+
+.navbar-header .lat {
+  margin: 5px 10px 0px 10px; }
+
+.navbar-header .lng {
+  margin: 0px 0px 0px 10px; }
+
 .table-striped {
   background-color: white; }
 
