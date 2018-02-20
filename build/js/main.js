@@ -10453,18 +10453,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (function () {
   console.log("init");
 
-  function onClickMap() {
-    var lat = (0, _jquery2.default)("#area_search [name='area[latitude]']")[0].value;
-    var lng = (0, _jquery2.default)("#area_search [name='area[longitude]']")[0].value;
-
-    if (lat == "" || lng == "") {
-      alert("緯度・経度を入力してください");
-      return;
-    }
-
-    var url = 'http://maps.google.com/maps?q=' + lat + ',' + lng;
-    window.open(url, '_blank');
-  }
+  function onClickMap() {}
 
   window.$ = _jquery2.default;
   window.onClickMap = onClickMap;

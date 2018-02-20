@@ -13,7 +13,6 @@ module.exports = [
         entry: {
             common: './src/sass/common.scss',
             home:   './src/sass/home.scss',
-            areas:  './src/sass/areas.scss',
             login:  './src/sass/login.scss'
         },
         output: {
@@ -44,9 +43,7 @@ module.exports = [
         /* pug modules */
         entry: {
             'login/index': './src/pug/pages/login/login.pug',
-            'home/index':  './src/pug/pages/home/home.pug',        
-            'areas/index': './src/pug/pages/areas/index.pug',
-            'areas/new': './src/pug/pages/areas/new.pug'
+            'home/index':  './src/pug/pages/home/home.pug'
         },
         output: {
             path: path.resolve(__dirname, 'build/html'),
